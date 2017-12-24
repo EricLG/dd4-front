@@ -1,11 +1,11 @@
   <header class="row">
-    <h1 class="col-sm mb-0"><a href="#" class="text-white"><img src="./../assets/layout/dnd_logo.png" alt="Dnd logo">{{title}}</a></h1>
+    <h1 class="col-sm mb-0"><a [routerLink]="''" class="text-white"><img src="./../assets/layout/dnd_logo.png" alt="Dnd logo">{{title}}</a></h1>
   </header>
 
   <nav class="row">
     <div class="col-sm navbar navbar-expand-sm navbar-dark bg-dark">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a href="#" class="nav-link text-white">Objets</a></li>
+        <li class="nav-item"><a [routerLink]="'magic-items'" class="nav-link text-white">Objets</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-white">Talents</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-white">Races</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-white">Classes</a></li>
@@ -20,9 +20,7 @@
 
   <br>
   <article class="row page">
-      <home></home>
-      <app-magic-items></app-magic-items>
-      <app-magic-items></app-magic-items>
+      <router-outlet></router-outlet>
   </article>
 
   <footer class="row">
