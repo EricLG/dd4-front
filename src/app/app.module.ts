@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MagicItemsComponent } from './items/magic/magic-items.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MagicItemsComponent
   ],
   imports: [
     BrowserModule
