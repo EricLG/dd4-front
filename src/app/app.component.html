@@ -1,8 +1,33 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
+<div class="page">
+  <header>
+    <h1 class="mb-0"><a href="#" class="text-white"><img src="./../assets/layout/dnd_logo.png" alt="Dnd logo">{{title}}</a></h1>
+  </header>
 
-<app-magic-items></app-magic-items>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a href="#" class="nav-link text-white">Objets</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white">Talents</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white">Races</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white">Classes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white">Campagnes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white">Boite à outils du MJ</a></li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Search">
+    </form>
+  </nav>
+
+  <div class="row no-margin">
+    <div class="col-sm">
+      <app-magic-items></app-magic-items>
+    </div>
+  </div>
+  <div>
+    <app-magic-items></app-magic-items>
+  </div>
+  <footer class="row col-sm-12 no-margin">
+    <div>
+      <p>Footer</p>
+    </div>
+  </footer>
+</div>
