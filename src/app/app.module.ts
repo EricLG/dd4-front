@@ -4,9 +4,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes  } from  '@angular/router';
 import { APP_BASE_HREF } from  '@angular/common';
 
+// Component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MagicItemsComponent } from './items/magic/magic-items.component';
+import { MagicItemDetailComponent } from './items/magic-item-detail/magic-item-detail.component';
 
 export  const routes: Routes  = [
     { path: '', component:  HomeComponent },  //  path: '/'
@@ -17,7 +19,8 @@ export  const routes: Routes  = [
   declarations: [
     AppComponent,
     HomeComponent,
-    MagicItemsComponent
+    MagicItemsComponent,
+    MagicItemDetailComponent
   ],
   imports: [
     NgbModule.forRoot(),
