@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes  } from  '@angular/router';
 import { APP_BASE_HREF } from  '@angular/common';
 
@@ -28,7 +29,9 @@ export  const routes: Routes  = [
   imports: [
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
+  ],
   providers: [
     MagicItemsService,
     { provide: APP_BASE_HREF, useValue: '/' }

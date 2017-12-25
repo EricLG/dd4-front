@@ -21,7 +21,19 @@ export class MagicItemsComponent implements OnInit {
   }
 
   getMagicItems(): void {
-    this.magicItems = this.magicItemsService.getMagicItems()
+    this.magicItemsService.getMagicItems().subscribe((jsonItems: any): void  =>  {
+        this.magicItems = jsonItems.map(jsonItem => new MagicItem(
+          jsonItem.name,
+          jsonItem.description,
+          jsonItem.alteration,
+          jsonItem.property,
+          jsonItem.power,
+          jsonItem.critical,
+          jsonItem.object_levels,
+          jsonItem.rarity,
+          jsonItem.source.name
+        ));
+    });
   }
 
 }

@@ -7,8 +7,12 @@ export class MagicItem {
     public property?: string,
     public power?: string,
     public critical?: string,
-    public level_min?: string,
+    public objectLevels?: Object,
     public rarity?: string,
     public source?: string
   ){}
+
+  level_min() {
+    return Math.min(...(this.objectLevels.map(level => level.level)))
+  }
 }

@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
-import { MagicItem } from '../model/magic-item';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class MagicItemsService {
 
-  getMagicItems(): MagicItem[] {
-    return [
-      new MagicItem("Arme magique", "Lorem", "jet d'Attaque et jet de dégâts", "propriete", "pouvoir", "+1D6 par bonus d'altération", "1", "common", "MdJ1"),
-      new MagicItem("Arme de feu", "Lorem feu", "jet d'Attaque et jet de dégâts", "propriete", "pouvoir", "+1D6 par bonus d'altération", "2", "common", "MdJ2"),
-      new MagicItem("Arme de froid", "Lorem glace", "jet d'Attaque et jet de dégâts", "propriete", "pouvoir", "+1D6 par bonus d'altération", "3", "common", "MdJ3")
-    ]
+  private railsServer = 'http://localhost:3000/'
+  private magicItemsUrl = 'items/magic_items/weapons.json';  // URL to web api
+
+  constructor(private http: HttpClient) {}
+
+  /** GET magic items from the server */
+  getMagicItems(): Observable<MagicItem[]> {
+    return this.http.get<MagicItem[]>(this.railsServer + this.magicItemsUrl);
   }
 }
