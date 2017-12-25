@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { MagicItemsComponent } from './items/magic/magic-items.component';
 import { MagicItemDetailComponent } from './items/magic-item-detail/magic-item-detail.component';
 
+// Services
+import { MagicItemsService } from './services/magic-items.service';
+
 export  const routes: Routes  = [
     { path: '', component:  HomeComponent },  //  path: '/'
     { path: 'magic-items',   component:  MagicItemsComponent },
@@ -26,8 +29,10 @@ export  const routes: Routes  = [
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
     BrowserModule
+  providers: [
+    MagicItemsService,
+    { provide: APP_BASE_HREF, useValue: '/' }
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
