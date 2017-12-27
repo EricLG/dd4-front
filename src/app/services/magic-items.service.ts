@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { map, tap } from 'rxjs/operators';
+import { MagicItem } from '../model/magic-item'
 
 @Injectable()
 export class MagicItemsService {
