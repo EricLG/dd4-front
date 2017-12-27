@@ -1,3 +1,5 @@
+import { ItemLevels } from '../model/item-levels'
+
 export class MagicItem {
 
   constructor(
@@ -7,12 +9,13 @@ export class MagicItem {
     public property?: string,
     public power?: string,
     public critical?: string,
-    public objectLevels?: Object,
+    public itemLevels?: ItemLevels[],
     public rarity?: string,
     public source?: string
   ){}
 
   level_min() {
-    return Math.min(...(this.objectLevels.map(level => level.level)))
+    return Math.min(...(this.itemLevels.map(itemLevels => itemLevels.level)))
   }
+
 }

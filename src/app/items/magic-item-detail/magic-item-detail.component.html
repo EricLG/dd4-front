@@ -1,11 +1,14 @@
-<div class="col-sm p-0 card">
+<div class=" p-0 card">
   <div class="card-header bg-title">
-    <h3 class="card-title"><strong>{{item.name}}</strong><span class="pull-right"> Niv. min. {{item.level_min()}} - {{item.rarity}}</span></h3>
+    <h6 class="card-title"><strong>{{item.name}}</strong><p class="text-right"> Niv. min. {{item.level_min()}} - {{item.rarity}}</p></h6>
+    <p><em>{{item.description}}</em></p>
   </div>
 
   <div class="card-body">
+    <item-levels [itemLevels]="item.itemLevels"></item-levels>
+
     <ul class="list-group">
-      <li class="list-group-item no-border-line bg"><em>{{item.description}}</em></li>
+      <li class="list-group-item no-border-line bg"></li>
     </ul>
   </div>
 
