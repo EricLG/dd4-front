@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MagicItemsComponent } from './items/magic/magic-items.component';
 import { MagicItemDetailComponent } from './items/magic-item-detail/magic-item-detail.component';
+import { ItemLevelsComponent } from './item-levels/item-levels.component';
 
 // Services
 import { MagicItemsService } from './services/magic-items.service';
@@ -24,7 +25,8 @@ export  const routes: Routes  = [
     AppComponent,
     HomeComponent,
     MagicItemsComponent,
-    MagicItemDetailComponent
+    MagicItemDetailComponent,
+    ItemLevelsComponent
   ],
   imports: [
     NgbModule.forRoot(),
