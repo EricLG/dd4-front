@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MagicItem } from '../../model/magic-item'
+import { MagicItem } from '../model/magic-item'
 
 @Component({
   selector: 'magic-item',

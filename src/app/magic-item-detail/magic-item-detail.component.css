@@ -1,0 +1,12 @@
+.bg-title {
+  color: white !important;
+  background-color: #daa634 !important;
+}
+.bg {
+  //background-color: #dfd8c5;
+  background: linear-gradient(to right, #e9e0ca 0%, white) no-repeat;
+}
+.no-border-line {
+ border: 0;
+ padding: 3px;
+}

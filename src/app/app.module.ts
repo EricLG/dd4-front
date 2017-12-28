@@ -8,8 +8,8 @@ import { APP_BASE_HREF } from  '@angular/common';
 // Component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { MagicItemsComponent } from './items/magic/magic-items.component';
-import { MagicItemDetailComponent } from './items/magic-item-detail/magic-item-detail.component';
+import { MagicItemsComponent } from './magic-items/magic-items.component';
+import { MagicItemDetailComponent } from './magic-item-detail/magic-item-detail.component';
 import { ItemLevelsComponent } from './item-levels/item-levels.component';
 
 // Services
