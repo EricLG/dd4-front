@@ -1,5 +1,5 @@
-import { ItemLevels } from '../model/item-levels'
-import { ItemGroups } from '../model/item-groups'
+import { ItemLevels } from '../model/item-levels';
+import { ItemGroups } from '../model/item-groups';
 
 export class MagicItem {
 
@@ -21,7 +21,7 @@ export class MagicItem {
   }
 
   item_groups() {
-    return this.itemGroups.map(ig => ' ' + ig.name))
+    return this.itemGroups.map(ig => (' ' + ig.name))
   }
 
 }
