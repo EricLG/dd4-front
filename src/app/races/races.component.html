@@ -1,0 +1,6 @@
+<h2>Liste des races</h2>
+<ul>
+	<li *ngFor="let race of this.races; let i = index">
+		<img src="../assets/races_mini/{{race.format_name()}}.jpg" alt="{{race.name}}">
+	 {{race.name}}</li>
+</ul>

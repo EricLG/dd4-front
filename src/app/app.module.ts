@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { MagicItemsComponent } from './magic-items/magic-items.component';
 import { MagicItemDetailComponent } from './magic-item-detail/magic-item-detail.component';
 import { ItemLevelsComponent } from './item-levels/item-levels.component';
+import { RacesComponent } from './races/races.component';
 
 // Services
 import { MagicItemsService } from './services/magic-items.service';
@@ -18,6 +19,7 @@ import { MagicItemsService } from './services/magic-items.service';
 export  const routes: Routes  = [
     { path: '', component:  HomeComponent },  //  path: '/'
     { path: 'magic-items',   component:  MagicItemsComponent },
+    { path: 'races',   component:  RacesComponent },
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ export  const routes: Routes  = [
     HomeComponent,
     MagicItemsComponent,
     MagicItemDetailComponent,
-    ItemLevelsComponent
+    ItemLevelsComponent,
+    RacesComponent
   ],
   imports: [
     NgbModule.forRoot(),
