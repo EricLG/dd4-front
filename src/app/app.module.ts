@@ -16,6 +16,7 @@ import { RaceDetailComponent } from './race-detail/race-detail.component';
 
 // Services
 import { MagicItemsService } from './services/magic-items.service';
+import { RacesService } from './services/races.service';
 
 export  const routes: Routes  = [
     { path: '', component:  HomeComponent },  //  path: '/'
@@ -42,6 +43,7 @@ export  const routes: Routes  = [
   ],
   providers: [
     MagicItemsService,
+    RacesService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { deburr, toLower, replace } from 'lodash'
 export class Race {
 
   constructor(
+  public id?: number,
 	public name?: string,
 	public average_height?: string,
 	public average_weight?: string,
