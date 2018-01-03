@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-sm-2">
+		<ul>
+			<li>Changelin</li>
+			<li>Elfe</li>
+		</ul>
+	</div>
+	<div class="col-sm-6">
+		<div class="panel panel-default bg">
+  			<div class="panel-heading bg">
+  			  <h3>{{ this.race.name }} - <small>traits raciaux</small></h3>
+  			</div>
+
+  			<div class="panel-body no-padding bg">
+  			  <ul class="list-group ">
+  			    <li class="list-group-item no-border-line bg"><strong>average_height</strong> : {{ this.race.average_height }}</li>
+  			    <li class="list-group-item no-border-line bg"><strong>average_weight</strong> : {{ this.race.average_weight }}</li>
+  			    <li class="list-group-item no-border-line bg"><strong>stats</strong> : <br>TODO</li>
+  			    <li class="list-group-item no-border-line bg"><strong>cat_size</strong> : {{ this.race.cat_size }}</li>
+  			    <li class="list-group-item no-border-line bg"><strong>speed</strong> : {{ this.race.speed }}</li>
+  			    <li class="list-group-item no-border-line bg"><strong>vision</strong> : {{ this.race.vision }}</li>
+  			    <li class="list-group-item no-border-line bg"><strong>language</strong> : {{ this.race.language }}</li>
+	     	    <!--
+	     	    <li [ngIf]="this.race.skill" class="list-group-item no-border-line bg"><strong>Skill</strong> : {{ this.race.skill }} </li>
+				<li [ngIf]="this.race.skill" *ngFor="let ft of this.race.features.main_ft; let i = index" class="list-group-item no-border-line bg"><strong>{{ ft.name }}</strong> : {{ f.description.html_safe }}</li>
+  			    -->
+  			    <li class="list-group-item no-border-line bg"></li>
+  			  </ul>
+  			</div>
+  			<div class="panel-footer no-padding bg">
+  			  <p><strong>Source</strong> : {{ this.race.source }}</p>
+  			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<figure>
+			<img class="img-fluid rounded mx-5" src="../assets/races/race_{{this.race.format_name()}}.png" alt="{{this.race.name}}">
+			<figcaption class="text-center"><small>{{this.race.name}}</small></figcaption>
+		</figure>
+	</div>
+</div>

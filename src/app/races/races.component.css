@@ -1,0 +1,15 @@
+.space {
+	min-height: 120px;
+}
+
+.box {
+  	border: 1px solid black;
+}
+
+figure {
+  display: table;
+}
+
+figcaption {
+  caption-side: bottom ;
+}

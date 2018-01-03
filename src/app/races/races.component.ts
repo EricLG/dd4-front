@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Race } from '../model/race'
+import { chunk } from 'lodash'
 
 @Component({
   selector: 'races',
-  templateUrl: './races.component.html'
+  host: {
+      class:'col-sm-12'
+  },
+  templateUrl: './races.component.html',
+  styleUrls: ['./races.component.css']
 })
 
 export class RacesComponent implements OnInit {
@@ -43,6 +48,10 @@ export class RacesComponent implements OnInit {
       new Race("Silvyen", "1,65 m à 1,80 m", "60 à 80 kg", "M", "6", "normale", "commun", "0", "Eberron"),
       new Race("Tieffelin", "1,65 m à 1,80 m", "60 à 80 kg", "M", "6", "normale", "commun", "0", "Eberron"),
     ]
+  }
+
+  getChunkRaces() {
+    return chunk(this.races, 6);
   }
 
 }
