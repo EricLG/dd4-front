@@ -1,6 +1,6 @@
 <h2>Liste des races</h2>
-	<div class="row" *ngFor="let races of this.getChunkRaces(); let i = index">
-		<div class="col-sm-2 space" *ngFor="let race of races; let in = index">
+	<div class="row" *ngFor="let races of this.getChunkRaces(); let i = index ">
+		<div class="col-sm-2 space" *ngFor="let race of races; let in = index ">
 			<figure>
 				<a [routerLink]="['/races', race.id]">
 				<img class="box img-fluid rounded mx-5" src="../assets/races_mini/{{race.format_name()}}.jpg" alt="{{race.name}}">
