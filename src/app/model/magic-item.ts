@@ -1,5 +1,5 @@
-import { ItemLevels } from '../model/item-levels';
-import { ItemGroups } from '../model/item-groups';
+import { ItemLevels } from './item-levels';
+import { ItemGroups } from './item-groups';
 
 export class MagicItem {
 
