@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import { map, tap } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Race } from '../model/race'
 
 @Injectable()
@@ -21,20 +21,26 @@ export class RacesService {
 
   /** GET races from the server */
   getRaces(): Observable<Race[]> {
-    return this.http.get<Race[]>(this.railsServer + this.racesUrl);
-  }
-
-  getDummyRaces(): Observable<String> {
-    return Observable.of(JSON.parse(this.MockRaces))
+    return this.http.get<Race[]>(this.railsServer + this.racesUrl)
+      .pipe(catchError(this.handleError('getRaces', JSON.parse(this.MockRaces))));
   }
 
   /** GET race from the server */
   getRace(id): Observable<Race> {
-    return this.http.get<Race>(this.railsServer + this.raceUrl + id + '.json');
+    return this.http.get<Race>(this.railsServer + this.raceUrl + id + '.json')
+      .pipe(catchError(this.handleError('getRace', JSON.parse(this.MockRace))));
   }
 
-  getDummyRace(id): Observable<String> {
-    return Observable.of(JSON.parse(this.MockRace))
-  }
- 
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console instead
+      return of(result as T);
+    }
+  };
 }

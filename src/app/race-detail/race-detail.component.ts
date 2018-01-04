@@ -34,7 +34,6 @@ export class RaceDetailComponent implements OnInit {
   }
 
   getRace(id): void {
-    //const races = this.racesService.getDummyRace(id)
     const races = this.racesService.getRace(id)
     races.subscribe((jsonObject: any): void  =>  {
       this.race = new Race(
