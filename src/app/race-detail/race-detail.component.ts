@@ -20,22 +20,18 @@ import { RacesService } from '../services/races.service';
 
 export class RaceDetailComponent implements OnInit {
 
-  race: Race = new Race();
-  races: Race[] = [];
-  id: Number = 0;
+  race: Race;
+  races: Race[];
 
   constructor(private route: ActivatedRoute, private racesService: RacesService) { }
 
   ngOnInit() {
-  	this.route.params.subscribe((params: Params): void => {
-		  this.id = Number(params.id); // Les paramètres sont toujours des string
-	  });
-	  this.getRace(this.id)
+	  this.getRace()
   }
 
-  getRace(id): void {
-    const races = this.racesService.getRace(id)
-    races.subscribe((jsonObject: any): void  =>  {
+  getRace(): void {
+    const id = +this.route.snapshot.paramMap.get('id')
+    this.racesService.getRace(id).subscribe((jsonObject: any): void  =>  {
       this.race = new Race(
         jsonObject.race.id,
         jsonObject.race.name,
