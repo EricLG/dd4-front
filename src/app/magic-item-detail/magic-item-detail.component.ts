@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { MagicItem } from '../model/magic-item'
 
 @Component({
@@ -13,6 +14,5 @@ export class MagicItemDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 }

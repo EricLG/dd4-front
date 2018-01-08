@@ -1,30 +1,31 @@
-  <header class="row">
+<header class="row">
     <h1 class="col-sm mb-0"><a [routerLink]="''" class="text-white"><img src="./../assets/layout/dnd_logo.png" alt="Dnd logo">{{title}}</a></h1>
-  </header>
+</header>
 
-  <nav class="row">
+<nav class="row">
     <div class="col-sm navbar navbar-expand-sm navbar-dark bg-dark">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link text-white" routerLink="magic-items">Objets</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Talents</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="races">Races</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Classes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Campagnes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Boite à outils du MJ</a></li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Search">
-      </form>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link text-white" routerLink="magic-items">Objets</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Talents</a></li>
+            <li class="nav-item"><a class="nav-link text-white" routerLink="races">Races</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Classes</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Campagnes</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Boite à outils du MJ</a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Search">
+        </form>
     </div>
-  </nav>
+</nav>
 
-  <br>
-  <article class="row page">
-      <router-outlet></router-outlet>
-  </article>
+<br>
 
-  <footer class="row">
+<article class="row page">
+    <router-outlet></router-outlet>
+</article>
+
+<footer class="row">
     <div class="col-sm">
-      <p>Footer</p>
+        <p>Footer</p>
     </div>
-  </footer>
+</footer>

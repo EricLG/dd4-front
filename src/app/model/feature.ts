@@ -9,7 +9,7 @@ export class Feature implements Deserializable<Feature> {
     public description?: string,
     public required?: string,
     public parent_feature_id?: number
-  ){}
+  ) { }
 
   deserialize(input: any): Feature {
     Object.assign(this, input);

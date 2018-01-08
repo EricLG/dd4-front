@@ -12,7 +12,7 @@ export class MagicItemsService {
   private railsServer = 'http://localhost:3000/'
   private magicItemsUrl = 'items/magic_items/weapons.json';  // URL to web api
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /** GET magic items from the server */
   getMagicItems(): Observable<MagicItem[]> {

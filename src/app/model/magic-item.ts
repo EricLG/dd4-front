@@ -14,7 +14,7 @@ export class MagicItem {
     public itemGroups?: ItemGroups[],
     public rarity?: string,
     public source?: string
-  ){}
+  ) { }
 
   level_min() {
     return Math.min(...(this.itemLevels.map(itemLevels => itemLevels.level)))
@@ -23,5 +23,4 @@ export class MagicItem {
   item_groups() {
     return this.itemGroups.map(ig => (' ' + ig.name))
   }
-
 }

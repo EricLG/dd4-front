@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MagicItem } from '../model/magic-item'
 import { ItemLevels } from '../model/item-levels'
 import { ItemGroups } from '../model/item-groups'
-
 
 // Services
 import { MagicItemsService } from '../services/magic-items.service';
@@ -57,6 +57,7 @@ export class MagicItemsComponent implements OnInit {
     new ItemGroups("Arcs"),
     new ItemGroups("Haches")
     ]
+
     const alteration = "Jet d'attaque et jet de dégâts."
     const critical = "+1D6 par bonus d'altération."
     this.magicItems = [
@@ -69,5 +70,4 @@ export class MagicItemsComponent implements OnInit {
       new MagicItem("Arme de fer", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ3")
     ]
   }
-
 }

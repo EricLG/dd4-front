@@ -1,14 +1,14 @@
 <table class="table table-sm">
-  <tbody>
-      <tr class="d-sm-flex justify-content-sm-around" *ngFor="let item of leftItemLevels; let i=index">
-        <td class="col-sm text-right">Niv. {{item.level}}</td>
-        <td class="col-sm text-right">+{{ item.alteration }}</td>
-        <td class="col-sm-3 text-right">{{ item.price }} PO</td>
-        <ng-template [ngIf]="rightItemLevels[i]">
-          <td class="col-sm text-right">Niv. {{rightItemLevels[i].level}}</td>
-          <td class="col-sm text-right">+{{ rightItemLevels[i].alteration }}</td>
-          <td class="col-sm-3 text-right">{{ rightItemLevels[i].price }} PO</td>
-        </ng-template>
-      </tr>
-  </tbody>
+    <tbody>
+        <tr class="d-sm-flex justify-content-sm-around" *ngFor="let item of leftItemLevels; let i=index ">
+            <td class="col-sm text-right">Niv. {{item.level}}</td>
+            <td class="col-sm text-right">+{{ item.alteration }}</td>
+            <td class="col-sm-3 text-right">{{ item.price }} PO</td>
+            <ng-template [ngIf]="rightItemLevels[i]">
+                <td class="col-sm text-right">Niv. {{rightItemLevels[i].level}}</td>
+                <td class="col-sm text-right">+{{ rightItemLevels[i].alteration }}</td>
+                <td class="col-sm-3 text-right">{{ rightItemLevels[i].price }} PO</td>
+            </ng-template>
+        </tr>
+    </tbody>
 </table>

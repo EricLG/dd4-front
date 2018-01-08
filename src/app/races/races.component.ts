@@ -36,5 +36,4 @@ export class RacesComponent implements OnInit {
   getChunkRaces() {
     return chunk(this.races, 6);
   }
-
 }

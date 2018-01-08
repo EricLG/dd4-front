@@ -21,7 +21,7 @@ export class Race implements Deserializable<Race>  {
     public source?: string,
     public features?: Feature[],
     public skill?: Skill
-  ){}
+  ) { }
 
   deserialize(input: any): Race {
     Object.assign(this, input);
@@ -35,6 +35,6 @@ export class Race implements Deserializable<Race>  {
   }
 
   format_name() {
-  	return replace(deburr(toLower(this.name)), ' ', '_')
+    return replace(deburr(toLower(this.name)), ' ', '_')
   }
 }

@@ -4,6 +4,5 @@ export class ItemLevels {
     public level?: number,
     public price?: string,
     public alteration?: string
-  ){}
-
+  ) { }
 }

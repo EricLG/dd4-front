@@ -1,26 +1,21 @@
 <div class="card p-0">
-  <div class="card-header bg-title ">
-    <h6 ><strong>{{item.name}}</strong>
-    <span class="float-right"> Niv. min. {{item.level_min()}} - {{item.rarity}}</span>
-    </h6>
-  </div>
-
-  <div class="row">
-  </div>
-  <div class="card-body p-0">
-    <ul class="list-group">
-      <li class="pl-3 list-group-item no-border-line bg"><em>{{item.description}}</em></li>
-      <item-levels [itemLevels]="item.itemLevels"></item-levels>
-      <li class="pl-3 list-group-item no-border-line"><strong>Groupes d'arme</strong> : {{ item.item_groups() }}</li>
-      <li class="pl-3 list-group-item no-border-line"><strong>Alteration</strong> : {{item.alteration}}</li>
-      <li class="pl-3 list-group-item no-border-line"><strong>Critique</strong> : {{item.critical}}</li>
-      <li class="pl-3 list-group-item no-border-line"><strong>Propriété</strong> : {{item.property}}</li>
-      <li class="pl-3 list-group-item no-border-line"><strong>Pouvoir</strong> : {{item.power}}</li>
-    </ul>
-  </div>
-
-  <div class="card-footer">
-    <p><strong>Source</strong> : {{item.source}}</p>
-  </div>
-
+    <div class="card-header bg-title ">
+        <h6 ><strong>{{item.name}}</strong>
+            <span class="float-right"> Niv. min. {{item.level_min()}} - {{item.rarity}}</span>
+        </h6>
+    </div>
+    <div class="card-body p-0">
+        <ul class="list-group">
+            <li class="pl-3 list-group-item no-border-line bg"><em>{{item.description}}</em></li>
+            <item-levels [itemLevels]="item.itemLevels"></item-levels>
+            <li class="pl-3 list-group-item no-border-line"><strong>Groupes d'arme</strong> : {{ item.item_groups() }}</li>
+            <li class="pl-3 list-group-item no-border-line"><strong>Alteration</strong> : {{item.alteration}}</li>
+            <li class="pl-3 list-group-item no-border-line"><strong>Critique</strong> : {{item.critical}}</li>
+            <li class="pl-3 list-group-item no-border-line"><strong>Propriété</strong> : {{item.property}}</li>
+            <li class="pl-3 list-group-item no-border-line"><strong>Pouvoir</strong> : {{item.power}}</li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <p><strong>Source</strong> : {{item.source}}</p>
+    </div>
 </div>

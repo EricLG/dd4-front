@@ -17,17 +17,13 @@ export class ItemLevelsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.getLeftItemLevels()
+    this.getLeftItemLevels()
   }
 
-
   getLeftItemLevels() {
-
     const levels = chunk(this.itemLevels, Math.ceil(this.itemLevels.length /2));
     this.leftItemLevels = levels[0];
     this.rightItemLevels = levels[1];
-
     return levels
   }
-
 }

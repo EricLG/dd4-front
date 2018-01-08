@@ -1,40 +1,38 @@
 <div class="row">
-  <div class="col-sm-2">
-    <h4>Races</h4>
-    <ul class="list-group">
-      <li class="ml-3" *ngFor="let r of races; let i = index "><a (click)="getRace(r.id)" routerLink="/races/{{r.id}}">{{r.name}}</a></li>
-    </ul>
-  </div>
-
-	<div class="col-sm-6">
-		<div class="card panel-default bg">
-  			<div class="card-header bg">
-  			  <h3>{{ race.name }} - <small>traits raciaux</small></h3>
-  			</div>
-
-  			<div class="card-body bg">
-  			  <ul class="list-group ">
-  			    <li class="list-group-item p-0 border-0 bg"><strong>average_height</strong> : {{ race.average_height }}</li>
-  			    <li class="list-group-item p-0 border-0 bg"><strong>average_weight</strong> : {{ race.average_weight }}</li>
-  			    <li class="list-group-item p-0 border-0 bg"><strong>stats</strong> : TODO</li>
-  			    <li class="list-group-item p-0 border-0 bg"><strong>cat_size</strong> : {{ race.cat_size }}</li>
-  			    <li class="list-group-item p-0 border-0 bg"><strong>speed</strong> : {{ race.speed }}</li>
-  			    <li class="list-group-item p-0 border-0 bg"><strong>vision</strong> : {{ race.vision }}</li>
-  			    <li class="list-group-item p-0 border-0 bg"><strong>language</strong> : {{ race.language }}</li>
-	     	    <li class="list-group-item p-0 border-0 bg"><strong>Compétences</strong> : {{ race.skill.format() }} </li>
-            <li class="list-group-item p-0 border-0 bg" *ngFor="let ft of race.features; let i = index " ><strong>{{ ft.name }}</strong> : <span [innerHTML]="ft.description"></span></li>
-  			    <li class="list-group-item py-0 pr-0 border-0 bg"></li>
-  			  </ul>
-  			</div>
-  			<div class="card-footer no-padding bg">
-  			  <p><strong>Source</strong> : {{ race.source }}</p>
-  			</div>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<figure>
-			<img class="img-fluid rounded mx-5" src="../assets/races/race_{{race.format_name()}}.png" alt="{{race.name}}">
-			<figcaption class="text-center"><small>{{race.name}}</small></figcaption>
-		</figure>
-	</div>
+    <div class="col-sm-2">
+        <h4>Races</h4>
+        <ul class="list-group">
+            <li class="ml-3" *ngFor="let r of races; let i = index "><a (click)="getRace(r.id)" routerLink="/races/{{r.id}}">{{r.name}}</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <div class="card panel-default bg">
+            <div class="card-header bg">
+                <h3>{{ race.name }} - <small>traits raciaux</small></h3>
+            </div>
+            <div class="card-body bg">
+                <ul class="list-group ">
+                    <li class="list-group-item p-0 border-0 bg"><strong>average_height</strong> : {{ race.average_height }}</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>average_weight</strong> : {{ race.average_weight }}</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>stats</strong> : TODO</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>cat_size</strong> : {{ race.cat_size }}</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>speed</strong> : {{ race.speed }}</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>vision</strong> : {{ race.vision }}</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>language</strong> : {{ race.language }}</li>
+                    <li class="list-group-item p-0 border-0 bg"><strong>Compétences</strong> : {{ race.skill.format() }} </li>
+                    <li class="list-group-item p-0 border-0 bg" *ngFor="let ft of race.features; let i = index " ><strong>{{ ft.name }}</strong> : <span [innerHTML]="ft.description"></span></li>
+                    <li class="list-group-item py-0 pr-0 border-0 bg"></li>
+                </ul>
+            </div>
+            <div class="card-footer no-padding bg">
+                <p><strong>Source</strong> : {{ race.source }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <figure>
+            <img class="img-fluid rounded mx-5" src="../assets/races/race_{{race.format_name()}}.png" alt="{{race.name}}">
+            <figcaption class="text-center"><small>{{race.name}}</small></figcaption>
+        </figure>
+    </div>
 </div>

@@ -23,23 +23,25 @@ export class RaceDetailComponent implements OnInit {
   race: Race;
   races: Race[];
 
-  constructor(private route: ActivatedRoute, private racesService: RacesService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private racesService: RacesService
+  ) { }
 
   ngOnInit() {
     let id = 0
-    this.route.params.subscribe((params: Params): void => { 
-      id = Number(params.id); // Les paramètres sont toujours des string 
+    this.route.params.subscribe((params: Params): void => {
+      id = Number(params.id); // Les paramètres sont toujours des string
     });
     this.getRace(id)
   }
 
   getRace(id: Number): void {
     this.racesService.getRace(id).subscribe((jsonObject: any): void  =>  {
-      this.race = new Race().deserialize(jsonObject.race)       
+      this.race = new Race().deserialize(jsonObject.race)
       this.races = jsonObject.races.map(
         (jsonItem: Race) => new Race().deserialize(jsonItem)
       );
     });
   }
-
 }
