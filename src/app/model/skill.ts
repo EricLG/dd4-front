@@ -1,4 +1,6 @@
-export class Skill {
+import {Deserializable} from "./deserializable";
+
+export class Skill implements Deserializable<Skill> {
 
   constructor(
     public id?: number,
@@ -21,6 +23,11 @@ export class Skill {
     public thievery?: number,
     public origin?: number
   ){}
+
+  deserialize(input: any): Skill {
+    Object.assign(this, input);
+    return this;
+  }
 
   format() {
   	const result = []

@@ -1,4 +1,6 @@
-export class Feature {
+import {Deserializable} from "./deserializable";
+
+export class Feature implements Deserializable<Feature> {
 
   constructor(
     public id?: number,
@@ -9,4 +11,8 @@ export class Feature {
     public parent_feature_id?: number
   ){}
 
+  deserialize(input: any): Feature {
+    Object.assign(this, input);
+    return this;
+  }
 }

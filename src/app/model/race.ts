@@ -1,10 +1,11 @@
 import { deburr, toLower, replace } from 'lodash'
 
+import {Deserializable} from "./deserializable";
 // Import des modèles pour les relations
 import { Feature } from './feature';
 import { Skill } from './skill';
 
-export class Race {
+export class Race implements Deserializable<Race>  {
 
   constructor(
   public id?: number,
@@ -22,8 +23,18 @@ export class Race {
     public skill?: Skill
   ){}
 
+  deserialize(input: any): Race {
+    Object.assign(this, input);
+    if (input.features) {
+      this.features = input.features.map((inputFeatures: Feature) => new Feature().deserialize(inputFeatures));
+    }
+    if (input.skill) {
+      this.skill = new Skill().deserialize(input.skill);
+    }
+    return this;
+  }
+
   format_name() {
   	return replace(deburr(toLower(this.name)), ' ', '_')
-
   }
 }

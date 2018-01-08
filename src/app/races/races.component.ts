@@ -27,10 +27,9 @@ export class RacesComponent implements OnInit {
 
   getRaces(): void {
     this.racesService.getRaces().subscribe((jsonObject: any): void  =>  {
-        this.races = jsonObject.races.map(jsonItem => new Race(
-          jsonItem.id,
-          jsonItem.name
-        ));
+        this.races = jsonObject.races.map(
+          (jsonItem: Race) => new Race().deserialize(jsonItem)
+         );
     });
   }
 
