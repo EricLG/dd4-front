@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes  } from  '@angular/router';
 import { APP_BASE_HREF } from  '@angular/common';
 
+// Module suplementaire
+import { AppRoutingModule } from './app-routing.module';
+
 // Component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,13 +21,6 @@ import { RaceDetailComponent } from './race-detail/race-detail.component';
 import { MagicItemsService } from './services/magic-items.service';
 import { RacesService } from './services/races.service';
 
-export  const routes: Routes  = [
-    { path: '', component:  HomeComponent },  //  path: '/'
-    { path: 'magic-items',   component:  MagicItemsComponent },
-    { path: 'races',   component:  RacesComponent },
-    { path: 'races/:id',   component:  RaceDetailComponent },
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,8 +33,8 @@ export  const routes: Routes  = [
   ],
   imports: [
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes),
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [
