@@ -1,7 +1,10 @@
+import {Deserializable} from "./deserializable";
+
 import { ItemLevels } from './item-levels';
 import { ItemGroups } from './item-groups';
+import { Source } from './source';
 
-export class MagicItem {
+export class MagicItem implements Deserializable<MagicItem> {
 
   constructor(
     public name?: string,
@@ -13,7 +16,7 @@ export class MagicItem {
     public itemLevels?: ItemLevels[],
     public itemGroups?: ItemGroups[],
     public rarity?: string,
-    public source?: string
+    public source?: Source
   ) { }
 
   level_min() {
@@ -22,5 +25,21 @@ export class MagicItem {
 
   item_groups() {
     return this.itemGroups.map(ig => (' ' + ig.name))
+  }
+
+  deserialize(input: any): MagicItem {
+    Object.assign(this, input);
+
+    if (input.itemLevels) {
+      this.itemLevels = input.itemLevels.map((inputItemLevels: ItemLevels) => new ItemLevels().deserialize(inputItemLevels));
+    }
+    if (input.itemGroups) {
+      this.itemGroups = input.itemGroups.map((inputItemGroups: ItemGroups) => new ItemGroups().deserialize(inputItemGroups));
+    }
+    if (input.source) {
+      this.source = new Source().deserialize(input.source);
+    }
+
+    return this;
   }
 }

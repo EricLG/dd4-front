@@ -28,17 +28,9 @@ export class MagicItemsComponent implements OnInit {
 
   getMagicItems(): void {
     this.magicItemsService.getMagicItems().subscribe((jsonItems: any): void  =>  {
-        this.magicItems = jsonItems.map(jsonItem => new MagicItem(
-          jsonItem.name,
-          jsonItem.description,
-          jsonItem.alteration,
-          jsonItem.property,
-          jsonItem.power,
-          jsonItem.critical,
-          jsonItem.object_levels,
-          jsonItem.rarity,
-          jsonItem.source.name
-        ));
+        this.magicItems = jsonItems.map(
+          (jsonItem: MagicItem) => new MagicItem().deserialize(jsonItem)
+        );
     });
   }
 
@@ -61,13 +53,13 @@ export class MagicItemsComponent implements OnInit {
     const alteration = "Jet d'attaque et jet de dégâts."
     const critical = "+1D6 par bonus d'altération."
     this.magicItems = [
-      new MagicItem("Arme magique", "Lorem", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ1"),
-      new MagicItem("Arme de feu", "Lorem feu", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ2"),
-      new MagicItem("Arme de froid", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ3"),
-      new MagicItem("Arme de foudre", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ3"),
-      new MagicItem("Arme de lumière", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ3"),
-      new MagicItem("Arme de sang", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ3"),
-      new MagicItem("Arme de fer", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", "MdJ3")
+      new MagicItem("Arme magique", "Lorem", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ1")),
+      new MagicItem("Arme de feu", "Lorem feu", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ2")),
+      new MagicItem("Arme de froid", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ3")),
+      new MagicItem("Arme de foudre", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ3")),
+      new MagicItem("Arme de lumière", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ3")),
+      new MagicItem("Arme de sang", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ3")),
+      new MagicItem("Arme de fer", "Lorem glace", alteration, "propriete", "pouvoir", critical, itemLevels, itemGroups, "common", new MagicItem("MdJ3"))
     ]
   }
 }

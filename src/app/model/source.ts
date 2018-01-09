@@ -1,12 +1,12 @@
 import {Deserializable} from "./deserializable";
 
-export class ItemGroups implements Deserializable<ItemGroups> {
+export class Source implements Deserializable<Source> {
 
   constructor(
-    public name?: string
+    public name?: string,
   ) { }
 
-  deserialize(input: any): ItemGroups {
+  deserialize(input: any): Source {
     Object.assign(this, input);
     return this;
   }
