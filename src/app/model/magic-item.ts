@@ -29,12 +29,11 @@ export class MagicItem implements Deserializable<MagicItem> {
 
   deserialize(input: any): MagicItem {
     Object.assign(this, input);
-
-    if (input.itemLevels) {
-      this.itemLevels = input.itemLevels.map((inputItemLevels: ItemLevels) => new ItemLevels().deserialize(inputItemLevels));
+    if (input.object_levels) {
+      this.itemLevels = input.object_levels.map((inputItemLevels: ItemLevels) => new ItemLevels().deserialize(inputItemLevels));
     }
-    if (input.itemGroups) {
-      this.itemGroups = input.itemGroups.map((inputItemGroups: ItemGroups) => new ItemGroups().deserialize(inputItemGroups));
+    if (input.weapon_groups) {
+      this.itemGroups = input.weapon_groups.map((inputItemGroups: ItemGroups) => new ItemGroups().deserialize(inputItemGroups));
     }
     if (input.source) {
       this.source = new Source().deserialize(input.source);
