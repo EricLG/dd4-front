@@ -4,6 +4,7 @@ import {Deserializable} from "./deserializable";
 // Import des modèles pour les relations
 import { Feature } from './feature';
 import { Skill } from './skill';
+import { Source } from './source';
 
 export class Race implements Deserializable<Race>  {
 
@@ -18,7 +19,7 @@ export class Race implements Deserializable<Race>  {
     public language?: string,
     public nb_language_sup?: string,
     public information?: string,
-    public source?: string,
+    public source?: Source,
     public features?: Feature[],
     public skill?: Skill
   ) { }
@@ -31,6 +32,10 @@ export class Race implements Deserializable<Race>  {
     if (input.skill) {
       this.skill = new Skill().deserialize(input.skill);
     }
+    if (input.source) {
+      this.source = new Source().deserialize(input.source);
+    }
+
     return this;
   }
 
