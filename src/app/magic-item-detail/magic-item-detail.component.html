@@ -11,8 +11,12 @@
             <li class="pl-3 list-group-item no-border-line"><strong>Groupes d'arme</strong> : {{ item.item_groups() }}</li>
             <li class="pl-3 list-group-item no-border-line"><strong>Alteration</strong> : {{item.alteration}}</li>
             <li class="pl-3 list-group-item no-border-line"><strong>Critique</strong> : {{item.critical}}</li>
-            <li class="pl-3 list-group-item no-border-line" *ngIf="item.property"><strong>Propriété</strong> : {{item.property}}</li>
-            <li class="pl-3 list-group-item no-border-line" *ngIf="item.power"><strong>Pouvoir</strong> : {{item.power}}</li>
+            <li class="pl-3 list-group-item no-border-line" *ngIf="item.property">
+                <strong>Propriété</strong> : <span [innerHTML]="item.property"></span>
+            </li>
+            <li class="pl-3 list-group-item no-border-line" *ngIf="item.power">
+                <strong>Pouvoir</strong> : <span [innerHTML]="item.power"></span>
+            </li>
         </ul>
     </div>
     <div class="card-footer">
