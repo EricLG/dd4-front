@@ -4,11 +4,18 @@
             <td class="col-sm text-right">Niv. {{item.level}}</td>
             <td class="col-sm text-right">+{{ item.alteration }}</td>
             <td class="col-sm-3 text-right">{{ item.price }} PO</td>
-            <ng-template [ngIf]="rightItemLevels[i]">
+            <div *ngIf="rightItemLevels[i]; then fullLine else emptyLine"></div>
+            <ng-template #fullLine>
                 <td class="col-sm text-right">Niv. {{rightItemLevels[i].level}}</td>
                 <td class="col-sm text-right">+{{ rightItemLevels[i].alteration }}</td>
                 <td class="col-sm-3 text-right">{{ rightItemLevels[i].price }} PO</td>
             </ng-template>
+            <ng-template #emptyLine>
+                <td class="col-sm text-right"></td>
+                <td class="col-sm text-right"></td>
+                <td class="col-sm-3 text-right"></td>
+            </ng-template>
         </tr>
     </tbody>
 </table>
+
